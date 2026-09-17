@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A cautious financial decision tool for Pork and Garlic Ice Cream Co. Year 2 Winter." />
+    <title>Pork & Garlic Ice Cream Co. | Year 2 Winter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Pork & Garlic Ice Cream Co.</p>
+        <h1>Year 2 Winter Decision Tool</h1>
+        <p class="lede">Compare a cautious plan with an ambitious plan before the trainer allocates the market.</p>
+      </div>
+      <button id="reset-button" class="button secondary" type="button">Restore initial draft</button>
+    </header>
+
+    <main id="app" class="page-shell" aria-live="polite"></main>
+
+    <template id="machine-template">
+      <div class="repeat-row machine-row">
+        <input data-key="name" aria-label="Machine name" placeholder="Machine name" />
+        <label>Capacity<input data-key="capacity" type="number" min="0" step="1" /></label>
+        <label>Maintenance<input data-key="maintenance" type="number" min="0" step="1" /></label>
+        <label>Depreciation<input data-key="depreciation" type="number" min="0" step="1" /></label>
+        <label>Life left<input data-key="remainingLife" type="number" min="0" step="1" /></label>
+        <button class="icon-button remove-row" type="button" aria-label="Remove machine">×</button>
+      </div>
+    </template>
+
+    <template id="loan-template">
+      <div class="repeat-row loan-row">
+        <input data-key="name" aria-label="Loan name" placeholder="Loan name" />
+        <label>Opening debt<input data-key="debt" type="number" min="0" step="1" /></label>
+        <label>Principal due<input data-key="principalDue" type="number" min="0" step="1" /></label>
+        <label>Rate %<input data-key="interestRate" type="number" min="0" step="0.1" /></label>
+        <button class="icon-button remove-row" type="button" aria-label="Remove loan">×</button>
+      </div>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
