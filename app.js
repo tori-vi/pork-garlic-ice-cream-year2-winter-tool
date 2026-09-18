@@ -306,7 +306,7 @@ function diffDrivers(a, b) {
 }
 
 function recommendation(results, completed) {
-  if (!completed) return { name: "Provisional — enter Year 1 autumn closing data", result: null, text: "The workbook records only the Year 1 Winter season. Until the Year 1 Autumn closing cash, annual profit, owned assets, loan balances, and tax-loss pool are confirmed, no option is financially final." };
+  if (!completed) return { name: "Provisional — enter Year 1 autumn closing data", result: null, text: "The workbook records Year 1 Winter and Spring. Until the Year 1 Autumn closing cash, annual profit, owned assets, loan balances, and tax-loss pool are confirmed, no option is financially final." };
   const viable = results.filter((item) => item.result.cashBeforeMarket >= 0 && item.result.closingCash >= 0 && item.result.warnings.filter((warning) => /capacity|slots|required|above/.test(warning)).length === 0);
   const pool = viable.length ? viable : results;
   const chosen = pool.sort((a, b) => b.result.closingCash - a.result.closingCash || b.result.netProfit - a.result.netProfit)[0];
@@ -333,8 +333,8 @@ function renderCompanySection() {
       <button class="icon-button" data-action="remove-loan" data-row="${index}" type="button" aria-label="Remove loan">×</button>
     </div>`).join("");
   return `<section class="card section">
-    <div class="section-title-row"><div><span class="estimate-label">Required actual Year 1 autumn input</span><h2>Year 1 actual closing position</h2></div><span class="small">Workbook import status: Winter recorded; Spring–Autumn closing data not present.</span></div>
-    <p class="field-note">These values are intentionally blank. The workbook has the real Year 1 Winter result but does not provide a completed Year 1 Autumn closing position. Enter the class model values; use zero only when it is genuinely zero.</p>
+    <div class="section-title-row"><div><span class="estimate-label">Required actual Year 1 autumn input</span><h2>Year 1 actual closing position</h2></div><span class="small">Workbook import status: Winter and Spring recorded; Summer–Autumn closing data not present.</span></div>
+    <p class="field-note">These values are intentionally blank. The workbook has the real Year 1 Winter and Spring results but does not provide a completed Year 1 Autumn closing position. Enter the class model values; use zero only when it is genuinely zero.</p>
     <div class="grid three">
       ${field("Closing cash after Year 1 Autumn", "company.openingCash", { required: true, note: "Opening cash for Year 2 Winter" })}
       ${field("Year 1 annual net profit", "company.annualProfit", { required: true, note: "Reference only" })}
