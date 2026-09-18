@@ -39,9 +39,9 @@ Confirm the assets and loan lists (or confirm none) before treating the recommen
 
 The page independently verifies the recorded Year 1 Winter test case:
 
-- net loss: **Sh 75,175**;
-- closing cash: **Sh 37,950**;
-- tax-loss pool added: **Sh 75,175**.
+- net loss: **Sh 4,366**;
+- closing cash: **Sh 108,759**;
+- tax-loss pool added: **Sh 4,366**.
 
 The dashboard displays PASS only when all three values agree.
 
