@@ -388,17 +388,14 @@ function renderSpringActual() {
     salesRequest: 140000, marketInvestment: 10000, machineCapacityUsed: 72000, machineSlotsUsed: 1,
     newMachinePrice: 35000, newMachineCapacity: 72000, newMachineMaintenance: 1800, newMachineLife: 8, newMachineSlots: 1,
     newBorrowing: 80000, newLoanTerm: 8, newLoanInterestRate: 10,
-    premises: [
-      { name: "D", active: true, slots: 1, rent: 17000, transport: 0.1, production: 70000 },
-      { name: "E", active: true, slots: 2, rent: 15000, transport: 0.2, production: 70000 },
-    ],
+    premises: [{ name: "E", active: true, slots: 2, rent: 15000, transport: 0.2, production: 140000 }],
   };
   const result = calculate(company, assumptions, option, 110000);
-  const passed = result.netProfit === -16608 && result.closingCash === 129651 && result.taxLossPoolEnd === 20974;
+  const passed = result.netProfit === -5108 && result.closingCash === 141151 && result.taxLossPoolEnd === 9474;
   return `<section class="card section" data-testid="year1-spring-actual"><div class="section-title-row"><div><h2>Year 1 Spring actual</h2><p class="small">Recorded decision and market result for Team 1.</p></div><div class="notice ${passed ? "success" : "danger"}"><strong>${passed ? "RECORDED" : "CHECK INPUTS"}</strong><br>${passed ? "Spring totals agree with the updated model." : "The record needs review."}</div></div>
-    <div class="check-grid"><div class="check-result"><span class="metric-label">Confirmed decision and allocation</span><p class="small">Sh 10,000 market investment · 140,000 requested and produced · 7 tonnes of milk · two Machine 1 units · Premises D and E · Sh 80,000 borrowing · 110,000 allocated sales · Sh 220,000 revenue.</p><p class="field-note">The Sh 80,000 loan is currently modelled over eight seasons, matching the original loan convention. Change this if the team chose a different term.</p></div>
+    <div class="check-grid"><div class="check-result"><span class="metric-label">Confirmed decision and allocation</span><p class="small">Sh 10,000 market investment · 140,000 requested and produced · 7 tonnes of milk · two Machine 1 units · Premise E only · Sh 80,000 borrowing · 110,000 allocated sales · Sh 220,000 revenue.</p><p class="field-note">The Sh 80,000 loan is currently modelled over eight seasons, matching the original loan convention. Change this if the team chose a different term.</p></div>
     <div class="grid four"><div class="metric"><span class="metric-label">Net loss</span><span class="metric-value negative">${signedMoney(result.netProfit)}</span></div><div class="metric"><span class="metric-label">Closing cash</span><span class="metric-value positive">${money(result.closingCash)}</span></div><div class="metric"><span class="metric-label">Cash before market</span><span class="metric-value positive">${money(result.cashBeforeMarket)}</span></div><div class="metric"><span class="metric-label">Ending tax-loss pool</span><span class="metric-value">${money(result.taxLossPoolEnd)}</span></div></div></div>
-    <p class="field-note">Transport: D ${money(5500)} + E ${money(11000)} = ${money(result.transport)}. Spring rent is ${money(result.rent)}, and bank interest is ${money(result.interest)}.</p>
+    <p class="field-note">Transport from Premise E is ${money(result.transport)}. Spring rent is ${money(result.rent)}, and bank interest is ${money(result.interest)}.</p>
   </section>`;
 }
 

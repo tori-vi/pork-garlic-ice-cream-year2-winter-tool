@@ -47,7 +47,7 @@ The dashboard displays PASS only when all three values agree.
 
 ## Year 1 Spring actual recorded
 
-The page also records Team 1's Spring market outcome: Sh 10,000 market investment, 140,000 requested and produced, 7 tonnes of milk, two Machine 1 units across Premises D and E, Sh 80,000 borrowing, 110,000 allocated sales, and Sh 220,000 revenue. With the new loan modelled over eight seasons, the resulting net loss is **Sh 16,608**, closing cash is **Sh 129,651**, and the tax-loss pool is **Sh 20,974**. Change the loan term if the team chose a term other than eight seasons.
+The page also records Team 1's Spring market outcome: Sh 10,000 market investment, 140,000 requested and produced, 7 tonnes of milk, two Machine 1 units in Premise E, Sh 80,000 borrowing, 110,000 allocated sales, and Sh 220,000 revenue. With the new loan modelled over eight seasons, the resulting net loss is **Sh 5,108**, closing cash is **Sh 141,151**, and the tax-loss pool is **Sh 9,474**. Change the loan term if the team chose a term other than eight seasons.
 
 ## Year 2 values are estimates
 
